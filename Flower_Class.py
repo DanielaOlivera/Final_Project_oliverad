@@ -15,26 +15,24 @@ class Flower:
     """
     A flower object
     """
-    def __init__(self, pos, num, sz):
+    def __init__(self, pos, num=0, sz=0):
         """
         The robotic artist needs an inventory to be able to know what type of flower to draw for you
         """
         self.corner = pos          # A Point object to hold the bottom left corner of the rectangle
-        self.petal_sides = num     # Number of sides each petal has
-        self.size = sz             # Length of each side on petal
+        self.petal_sides = num      # To save place to store the number of sides in each petal
+        self.size = sz             # To save place to store the length of each side on petal
         self.turtle = turtle.Turtle()
 
     def user_set_size(self):
-        self.size = int(input("Enter petal size: [5-20]"))
+        self.size = int(input("Enter petal size: [2-20]"))
 
     def angle_calculator(self):
         """
-        Calculates, prints and returns angle based on number of sides
+        Calculates and returns angle based on number of sides
         :return: angle
         """
         angle = 360/self.petal_sides
-        print("The number of sides is", self.petal_sides)
-        print("The angle is", angle)
         return angle
 
     def triangle_petals(self):
@@ -42,10 +40,11 @@ class Flower:
         Make a multi-color triangle
         :return: None
         """
+        self.petal_sides = 3
         for i in ["black", "silver", "blue"]:
             self.turtle.color(i)
             self.turtle.forward(self.size)
-            self.turtle.left(360/3)
+            self.turtle.left(self.angle_calculator())
             self.turtle.speed(10)
 
     def pentagon_petals(self):
@@ -53,10 +52,11 @@ class Flower:
         Make a multi-color pentagon
         :return: None
         """
+        self.petal_sides = 5
         for i in ["black", "white", "purple", "violet", "olive"]:
             self.turtle.color(i)
             self.turtle.forward(self.size)
-            self.turtle.left(360/5)
+            self.turtle.left(self.angle_calculator())
             self.turtle.speed(10)
 
     def grow_flower_a(self):
@@ -94,6 +94,21 @@ class Flower:
                 self.pentagon_petals()
                 self.turtle.forward(3)
                 self.turtle.right(13)
+
+    def flower_center(self, x, y):
+        """
+        Make flower center
+        :param x: x coordinate position
+        :param y: y coordinate position
+        :return: None
+        """
+        self.turtle.hideturtle()
+        self.turtle.shape("circle")
+        self.turtle.pensize(200)
+        self.turtle.color("yellow")
+        self.turtle.penup()
+        self.turtle.goto(x, y)
+        self.turtle.stamp()
 
     def grow_steams(self):
         """
