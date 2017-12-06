@@ -22,17 +22,16 @@ def main():
     wn.bgcolor("green")             # Set up screen color
     #wn.bgpic("giphy.gif")
     p = Point(30, -47)
-    dani = Flower(p, num=3, sz=4)
+    dani = Flower(p)
     dani.user_set_size()
     dani.grow_flower_a()
     #dani.grow_flower_b()
     #dani.grow_steams()
     p1 = Point(-200, 100)
-    ella = Flower(p1, num=3, sz=4)
+    ella = Flower(p1)
     ella.user_set_size()
     ella.grow_flower_b()
-
-
-    wn.exitonclick()
+    wn.onclick(ella.flower_center)
+    wn.mainloop()
 
 main()
