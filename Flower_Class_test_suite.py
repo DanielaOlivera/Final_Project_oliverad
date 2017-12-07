@@ -44,7 +44,7 @@ def flower_class_test_suite():
     ##########################################
     dani = Flower(pos=(0,0), num=3)
     testit(dani.angle_calculator() == 120)   # 360/3 is 120
-    ella = Flower(pos=(0,0), num=360)
+    ella = Flower(pos=(0, 0), num=360)
     testit(ella.angle_calculator() == 1)
 
 
@@ -55,8 +55,7 @@ def flower_class_test_suite():
 
 
 def main():
-    """ A function that takes temperature input and converts it to kelvin
-    A fun little program that sings the Willabee Wallabee song.
+    """ A function that calculates the angle to turn based on number of sides
 
     :return: None
     """
