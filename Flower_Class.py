@@ -19,7 +19,7 @@ class Flower:
         """
         Creates flowers at a starting position
         """
-        self.initial_position = pos # A Point object to hold the starting position
+        self.initial_position = pos  # A Point object to hold the starting position
         self.petal_sides = num      # To save place to store the number of sides in each petal
         self.size = sz             # To save place to store the length of each side on petal
         self.turtle = turtle.Turtle()
@@ -28,25 +28,28 @@ class Flower:
     def user_set_size(self):
         """
         Asks user for the size of petal size
-        :return:
+        :return: None
         """
         self.size = int(input("Enter petal size: [2-20]"))
 
     def user_set_shape_petals(self):
         """
         Asks user for number of sides in each petal
-        :return:
+        :return: None
         """
         self.petal_sides = int(input("Enter number of sides in each petal: [3/5]"))
-        return self.petal_sides
+
 
     def angle_calculator(self):
         """
         Calculates and returns angle based on number of sides
         :return: angle
         """
-        angle = 360/self.petal_sides
-        return angle
+        if type(self.petal_sides) == int:
+            angle = 360/self.petal_sides
+            return angle
+        else:
+            return False    # in number of sides is not an integer, it returns False
 
     def triangle_petals(self):
         """
@@ -111,7 +114,7 @@ class Flower:
             self.turtle.right(45)
             self.turtle.forward(70)
             self.turtle.pendown()
-            for i in range(12):     # Make ella draw 12 triangles on each set of triangles
+            for t in range(12):     # Make ella draw 12 triangles on each set of triangles
                 self.triangle_petals()
                 self.turtle.forward(5)
                 self.turtle.right(15)
@@ -130,7 +133,7 @@ class Flower:
             self.turtle.right(45)
             self.turtle.forward(70)
             self.turtle.pendown()
-            for i in range(12):     # Make dani draw 12 pentagons on each set of polygons
+            for t in range(12):     # Make dani draw 12 pentagons on each set of polygons
                 self.pentagon_petals()
                 self.turtle.forward(3)
                 self.turtle.right(13)
@@ -151,7 +154,6 @@ class Flower:
         self.turtle.goto(x, y)
         self.turtle.stamp()
 
-
     # not part of flower class
     # def make_text(self, shape, txt):
     #     """
@@ -168,5 +170,3 @@ class Flower:
 
 # Things to do next:
 # add butterflies
-
-
