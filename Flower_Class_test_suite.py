@@ -46,6 +46,14 @@ def flower_class_test_suite():
     testit(dani.angle_calculator() == 120)   # 360/3 is 120
     ella = Flower(pos=(0, 0), num=360)
     testit(ella.angle_calculator() == 1)
+    ella = Flower(pos=(0, 0), num='one')
+    testit(ella.angle_calculator() == False)
+    ella = Flower(pos=(0, 0), num= "")
+    testit(ella.angle_calculator() == False)
+    ella = Flower(pos=(0, 0), num= "c")
+    testit(ella.angle_calculator() == False)
+    ella = Flower(pos=(0, 0), num= 4.8)        # Number of sides must be integer
+    testit(ella.angle_calculator() == False)
 
 
 
