@@ -36,23 +36,23 @@ def testit(did_pass):
 def flower_class_test_suite():
     """
     The test_suite function utilizes the testit() function,
-    and is designed to test the willaby_wallaby() function.
+    and is designed to test the angle_calculator() function.
 
     :return: None
     """
     print("\nRunning the flower_class_test_suite().")
     ##########################################
     dani = Flower(pos=(0,0), num=3)
-    testit(dani.angle_calculator() == 120)   # 360/3 is 120
+    testit(dani.angle_calculator() == 120)  # 360/3 is 120
     ella = Flower(pos=(0, 0), num=360)
-    testit(ella.angle_calculator() == 1)
-    ella = Flower(pos=(0, 0), num='one')
+    testit(ella.angle_calculator() == 1)    # 360/360 is 1
+    ella = Flower(pos=(0, 0), num='one')    # 'one' is not an integer, so the function should return False
     testit(ella.angle_calculator() == False)
     ella = Flower(pos=(0, 0), num= "")
     testit(ella.angle_calculator() == False)
-    ella = Flower(pos=(0, 0), num= "c")
+    ella = Flower(pos=(0, 0), num= "c")     # 'c' is not an integer, so the function should return False
     testit(ella.angle_calculator() == False)
-    ella = Flower(pos=(0, 0), num= 4.8)        # Number of sides must be integer
+    ella = Flower(pos=(0, 0), num= 4.8)     # 4.8 is not an integer, its type is float, so function should return False
     testit(ella.angle_calculator() == False)
 
 
@@ -64,7 +64,6 @@ def flower_class_test_suite():
 
 def main():
     """ A function that calculates the angle to turn based on number of sides
-
     :return: None
     """
 
