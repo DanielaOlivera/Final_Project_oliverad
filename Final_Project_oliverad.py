@@ -11,6 +11,7 @@
 import turtle
 from Flower_Class import Flower
 from Point_Class import Point
+from Butterfly_Class import Butterfly
 
 
 def h1():
@@ -21,31 +22,42 @@ def h1():
     wn.bye()                        # Close down the turtle window
 
 
+def h2():
+    """
+    Event handler to stamp butterflies
+    :return:
+    """
+    butterfly.draw_butterfly()     # Stamp butterfly
+
+
 def main():
     """
     Makes two flowers with geometric patterns.
     :return: None
     """
     global wn
+    global butterfly
     wn = turtle.Screen()            # Makes a new turtle screen
     wn.bgpic("grass.gif")
-    p = Point()
+    p = Point()                     # Point object created at 0,0 by default
+    butterfly = Butterfly()
     flowers = int(input("How many flowers dou you want?"))
 
     for i in range(flowers):
         global dani
-        p.user_set()
+        p.user_set()                    # Point object is updated according to user input
         dani = Flower(p)
-        dani.user_set_shape_petals()
-        dani.user_set_size()
+        dani.user_set_shape_petals()    # Ask user for number of sides in each petal
+        dani.user_set_size()            # Ask user for size of sides in each petal
         if dani.petal_sides == 3:
-            dani.grow_flower_a()
+            dani.grow_flower_a()        # Draw flower with triangles in each petal
         if dani.petal_sides == 5:
-            dani.grow_flower_b()
+            dani.grow_flower_b()        # Draw flower with pentagons in each petal
 
-    wn.onclick(dani.flower_center)
-    wn.onkey(h1, "q")
-    wn.listen()
+    wn.onclick(dani.flower_center)      # Stamp a yellow circle where the user clicks
+    wn.onkey(h1, "q")    # press q to quit
+    wn.onkey(h2, "b")    # press b to stamp butterflies
+    wn.listen()          # this enables the window to listen to onkey events
     wn.mainloop()
 
 
