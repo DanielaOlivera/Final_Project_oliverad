@@ -20,8 +20,8 @@ class Flower:
         Creates flowers at a starting position
         """
         self.initial_position = pos  # A Point object to hold the starting position
-        self.petal_sides = num      # To save place to store the number of sides in each petal
-        self.size = sz             # To save place to store the length of each side on petal
+        self.petal_sides = num       # To save place to store the number of sides in each petal
+        self.size = sz               # To save place to store the length of each side on petal
         self.turtle = turtle.Turtle()
         self.wn = turtle.Screen()
 
@@ -30,7 +30,7 @@ class Flower:
         Asks user for the size of petal size
         :return: None
         """
-        self.size = int(input("Enter petal size: [2-20]"))
+        self.size = int(input("Enter petal size: [2-10]"))
 
     def user_set_shape_petals(self):
         """
@@ -39,7 +39,6 @@ class Flower:
         """
         self.petal_sides = int(input("Enter number of sides in each petal: [3/5]"))
 
-
     def angle_calculator(self):
         """
         Calculates and returns angle based on number of sides
@@ -47,9 +46,9 @@ class Flower:
         """
         if type(self.petal_sides) == int:
             angle = 360/self.petal_sides
-            return angle
+            return angle    # if number of sides is an integer calculate the angle and return it
         else:
-            return False    # in number of sides is not an integer, it returns False
+            return False    # if number of sides is not an integer, it returns False
 
     def triangle_petals(self):
         """
@@ -57,11 +56,11 @@ class Flower:
         :return: None
         """
         for i in ["black", "silver", "blue"]:
-            self.turtle.color(i)
+            self.turtle.color(i)  # i is one of three elements
             self.turtle.pensize(3)
-            self.turtle.forward(self.size)
-            self.turtle.left(self.angle_calculator())
-            self.turtle.speed(10)
+            self.turtle.forward(self.size)  # turtle travels the distance given by the user
+            self.turtle.left(self.angle_calculator())   # turtle turns the angle calculated from number of sides
+            self.turtle.speed(0)        # fastest speed
 
     def pentagon_petals(self):
         """
@@ -69,11 +68,11 @@ class Flower:
         :return: None
         """
         for i in ["black", "white", "purple", "violet", "red"]:
-            self.turtle.color(i)
+            self.turtle.color(i)   # i is one of five elements
             self.turtle.pensize(3)
-            self.turtle.forward(self.size)
-            self.turtle.left(self.angle_calculator())
-            self.turtle.speed(10)
+            self.turtle.forward(self.size)  # turtle travels the distance given by the user
+            self.turtle.left(self.angle_calculator())   # turtle turns the angle calculated from number of sides
+            self.turtle.speed(0)    # fastest speed
 
     def grow_steams(self):
         """
@@ -128,7 +127,6 @@ class Flower:
         self.turtle.penup()
         self.turtle.goto(self.initial_position.x, self.initial_position.y)
         for i in range(9):          # Make dani draw 9 semi-circular sets of pentagons creating a big circle
-            self.turtle.speed(10)
             self.turtle.penup()
             self.turtle.right(45)
             self.turtle.forward(70)
@@ -167,6 +165,3 @@ class Flower:
     #     shape.pendown()
     #     shape.write(txt,move=False,align='center',font=("Arial", 30, ("bold","normal")))
 # end class
-
-# Things to do next:
-# add butterflies
