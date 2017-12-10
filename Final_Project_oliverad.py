@@ -27,7 +27,7 @@ def h2():
     Event handler to stamp butterflies
     :return:
     """
-    butterfly.draw_butterfly()     # Stamp butterfly
+    butterfly.stamp_butterfly()     # Stamp butterfly
 
 
 def main():
