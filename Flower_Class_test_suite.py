@@ -47,13 +47,13 @@ def flower_class_test_suite():
     ella = Flower(pos=(0, 0), num=360)
     testit(ella.angle_calculator() == 1)    # 360/360 is 1
     ella = Flower(pos=(0, 0), num='one')    # 'one' is not an integer, so the function should return False
-    testit(ella.angle_calculator() == False)
-    ella = Flower(pos=(0, 0), num= "")
-    testit(ella.angle_calculator() == False)
-    ella = Flower(pos=(0, 0), num= "c")     # 'c' is not an integer, so the function should return False
-    testit(ella.angle_calculator() == False)
-    ella = Flower(pos=(0, 0), num= 4.8)     # 4.8 is not an integer, its type is float, so function should return False
-    testit(ella.angle_calculator() == False)
+    testit(ella.angle_calculator() == "Error")
+    ella = Flower(pos=(0, 0), num="")
+    testit(ella.angle_calculator() == "Error")
+    ella = Flower(pos=(0, 0), num="c")     # 'c' is not an integer, so the function should return False
+    testit(ella.angle_calculator() == "Error")
+    ella = Flower(pos=(0, 0), num=4.8)     # 4.8 is not an integer, its type is float, so function should return False
+    testit(ella.angle_calculator() == "Error")
 
 
 
