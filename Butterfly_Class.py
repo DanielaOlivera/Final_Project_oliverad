@@ -24,7 +24,7 @@ class Butterfly:
         self.wn = turtle.Screen()
         self.wn.addshape("butterfly1.gif")
 
-    def draw_butterfly(self):
+    def stamp_butterfly(self):
 
         self.turtle.pensize(5)
         self.turtle.color("orange")
