@@ -22,12 +22,11 @@ class Flower:
         self.initial_position = pos  # A Point object to hold the starting position
         self.petal_sides = num       # To save place to store the number of sides in each petal
         self.size = sz               # To save place to store the length of each side on petal
-        self.turtle = turtle.Turtle()
-        self.wn = turtle.Screen()
+        self.turtle = None           # To save space we only create a turtle if and when grow_flower() is used
 
     def user_set_size(self):
         """
-        Asks user for the size of petal size
+        Asks user for the size of internal shape in each petal
         :return: None
         """
         self.size = int(input("Enter petal size: [2-10]"))
@@ -105,6 +104,7 @@ class Flower:
         Draw a flower with triangular petals
         :return: None
         """
+        self.turtle = turtle.Turtle()
         self.turtle.penup()
         self.turtle.goto(self.initial_position.x, self.initial_position.y)
 
@@ -124,6 +124,7 @@ class Flower:
         Draw a flower whose petals are pentagons
         :return: None
         """
+        self.turtle = turtle.Turtle()
         self.turtle.penup()
         self.turtle.goto(self.initial_position.x, self.initial_position.y)
         for i in range(9):          # Make dani draw 9 semi-circular sets of pentagons creating a big circle
