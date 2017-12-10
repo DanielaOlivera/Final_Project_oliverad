@@ -18,14 +18,17 @@ class Butterfly:
     """
     def __init__(self):
         """
-        Creates flowers at a starting position
+        Creates butterfly shapes
         """
         self.turtle = turtle.Turtle()
         self.wn = turtle.Screen()
         self.wn.addshape("butterfly1.gif")
 
     def stamp_butterfly(self):
-
+        """
+        Stamps a butterfly at a random point
+        :return: None
+        """
         self.turtle.pensize(5)
         self.turtle.color("orange")
         self.turtle.penup()
