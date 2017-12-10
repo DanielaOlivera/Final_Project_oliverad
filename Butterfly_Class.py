@@ -32,6 +32,6 @@ class Butterfly:
         self.turtle.pensize(5)
         self.turtle.color("orange")
         self.turtle.penup()
-        self.turtle.goto(random.randint(-200, 200), random.randint(-200,200))
+        self.turtle.goto(random.randint(-200, 200), random.randint(-200, 200))
         self.turtle.shape("butterfly1.gif")
         self.turtle.stamp()
