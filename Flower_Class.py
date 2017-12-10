@@ -47,7 +47,7 @@ class Flower:
             angle = 360/self.petal_sides
             return angle    # if number of sides is an integer calculate the angle and return it
         else:
-            return False    # if number of sides is not an integer, it returns False
+            return "Error"    # if number of sides is not an integer, it returns Error
 
     def triangle_petals(self):
         """
@@ -140,7 +140,7 @@ class Flower:
 
     def flower_center(self, x, y):
         """
-        Make flower center
+        Stamp a flower center
         :param x: x coordinate position
         :param y: y coordinate position
         :return: None
