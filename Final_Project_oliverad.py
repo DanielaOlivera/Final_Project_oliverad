@@ -41,18 +41,22 @@ def main():
     wn.bgpic("grass.gif")
     p = Point()                     # Point object created at 0,0 by default
     butterfly = Butterfly()
-    flowers = int(input("How many flowers dou you want?"))
+    flowers = int(input("How many flowers dou you want? Suggested 1-4"))
+    if flowers == 0:
+        print("CANNOT DRAW 0 FLOWERS")
+        return
 
-    for i in range(flowers):
-        global dani
-        p.user_set()                    # Point object is updated according to user input
-        dani = Flower(p)
-        dani.user_set_shape_petals()    # Ask user for number of sides in each petal
-        dani.user_set_size()            # Ask user for size of sides in each petal
-        if dani.petal_sides == 3:
-            dani.grow_flower_a()        # Draw flower with triangles in each petal
-        if dani.petal_sides == 5:
-            dani.grow_flower_b()        # Draw flower with pentagons in each petal
+    else:
+        for i in range(flowers):
+            global dani
+            p.user_set()                    # Point object is updated according to user input
+            dani = Flower(p)
+            dani.user_set_shape_petals()    # Ask user for number of sides in each petal
+            dani.user_set_size()            # Ask user for size of sides in each petal
+            if dani.petal_sides == 3:
+                dani.grow_flower_a()        # Draw flower with triangles in each petal
+            if dani.petal_sides == 5:
+                dani.grow_flower_b()        # Draw flower with pentagons in each petal
 
     wn.onclick(dani.flower_center)      # Stamp a yellow circle where the user clicks
     wn.onkey(h1, "q")    # press q to quit
