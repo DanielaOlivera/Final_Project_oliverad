@@ -29,6 +29,7 @@ class Butterfly:
         Stamps a butterfly at a random point
         :return: None
         """
+        self.turtle.hideturtle()
         self.turtle.pensize(5)
         self.turtle.color("orange")
         self.turtle.penup()
