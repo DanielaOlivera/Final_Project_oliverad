@@ -79,19 +79,19 @@ class Flower:
         :return: None
         """
         self.turtle.color('#8B4513')
-        self.turtle.pensize(5)
+        self.turtle.pensize(7)
         self.turtle.penup()
         self.turtle.goto(self.initial_position.x + 30, self.initial_position.y - 90)
         self.turtle.right(90)
         self.turtle.pendown()
 
         for i in range(3):     # draw large part of steam
-            self.turtle.forward(50)
+            self.turtle.forward(47)
             self.turtle.right(-20)
         # draw small part of steam
         for i in range(2):
             self.turtle.right(20)
-            self.turtle.forward(-50)
+            self.turtle.forward(-47)
         self.turtle.right(135)
         self.turtle.forward(20)
         # stamp a little leaf
@@ -158,16 +158,4 @@ class Flower:
         self.turtle.goto(x, y)
         self.turtle.stamp()
 
-    # not part of flower class
-    # def make_text(self, shape, txt):
-    #     """
-    #     writes text.
-    #     :param shape: a turtle object
-    #     :return: None
-    #     """
-    #     shape.penup()
-    #     shape.color("#E93A63")
-    #     shape.setpos(70,120)
-    #     shape.pendown()
-    #     shape.write(txt,move=False,align='center',font=("Arial", 30, ("bold","normal")))
 # end class
