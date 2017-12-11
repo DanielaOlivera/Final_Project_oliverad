@@ -16,7 +16,7 @@ from time import sleep
 
 
 def instructions():
-    name = input("Hello there! What is your name?")
+    name = input("Hello there! What is your name? \n")
     print("Welcome, {0}! This program will help you create a beautiful garden". format(name))
     sleep(delay)
     print("Answer the questions and once the flowers are drawn, click on the center each flower to add a flower center")
@@ -60,11 +60,11 @@ def main():
     wn.bgpic("grass.gif")
     p = Point()                     # Point object created at 0,0 by default
     butterfly = Butterfly()
-    flowers = int(input("How many flowers dou you want? Suggested: 1-4"))
+    flowers = int(input("How many flowers dou you want? Suggested: 1-4 \n"))
     while flowers == 0 or flowers > 4:
         msg = "CANNOT DRAW {0} FLOWERS".format(flowers)
         print(msg)
-        flowers = int(input("How many flowers dou you want? Suggested: 1-4"))
+        flowers = int(input("How many flowers dou you want? Suggested: 1-4 \n"))
 
     else:
         for i in range(flowers):
