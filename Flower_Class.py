@@ -54,7 +54,7 @@ class Flower:
         Make a multi-color triangle
         :return: None
         """
-        for i in ["black", "silver", "blue"]:
+        for i in ["black", "turquoise", "blue"]:
             self.turtle.color(i)  # i is one of three elements
             self.turtle.pensize(3)
             self.turtle.forward(self.size)  # turtle travels the distance given by the user
@@ -66,7 +66,7 @@ class Flower:
         Make a multi-color pentagon
         :return: None
         """
-        for i in ["black", "white", "purple", "violet", "red"]:
+        for i in ["crimson", "white", "salmon", "purple", "deeppink"]:
             self.turtle.color(i)   # i is one of five elements
             self.turtle.pensize(3)
             self.turtle.forward(self.size)  # turtle travels the distance given by the user
@@ -107,8 +107,8 @@ class Flower:
         self.turtle = turtle.Turtle()
         self.turtle.penup()
         self.turtle.goto(self.initial_position.x, self.initial_position.y)
-
-        for i in range(8):          # Make ella draw 8 semi-circular sets of triangles creating a big circle
+        self.turtle.begin_fill()
+        for i in range(8):          # Make ella draw 8 semi-circular sets of triangles creating a flower
             self.turtle.penup()
             self.turtle.right(45)
             self.turtle.forward(70)
@@ -117,6 +117,8 @@ class Flower:
                 self.triangle_petals()
                 self.turtle.forward(5)
                 self.turtle.right(15)
+        self.turtle.color("lightblue")
+        self.turtle.end_fill()
         self.grow_steams()
 
     def grow_flower_b(self):
@@ -127,7 +129,8 @@ class Flower:
         self.turtle = turtle.Turtle()
         self.turtle.penup()
         self.turtle.goto(self.initial_position.x, self.initial_position.y)
-        for i in range(9):          # Make dani draw 9 semi-circular sets of pentagons creating a big circle
+        self.turtle.begin_fill()
+        for i in range(9):          # Make dani draw 9 semi-circular sets of pentagons creating a flower
             self.turtle.penup()
             self.turtle.right(45)
             self.turtle.forward(70)
@@ -136,6 +139,8 @@ class Flower:
                 self.pentagon_petals()
                 self.turtle.forward(3)
                 self.turtle.right(13)
+        self.turtle.color("plum")
+        self.turtle.end_fill()
         self.grow_steams()
 
     def flower_center(self, x, y):
