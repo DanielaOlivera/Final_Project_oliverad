@@ -41,14 +41,10 @@ def main():
     wn.bgpic("grass.gif")
     p = Point()                     # Point object created at 0,0 by default
     butterfly = Butterfly()
-    flowers = int(input("How many flowers dou you want? Suggested 1-4"))
+    flowers = int(input("How many flowers dou you want? Suggested: 1-4"))
     while flowers == 0 or flowers > 4:
         print ("CANNOT DRAW {0} FLOWERS".format(flowers))
-        flowers = int(input("How many flowers dou you want? Suggested 1-4"))
-
-    # if flowers == 0:
-    #     print("CANNOT DRAW 0 FLOWERS")
-    #     return
+        flowers = int(input("How many flowers dou you want? Suggested: 1-4"))
 
     else:
         for i in range(flowers):
