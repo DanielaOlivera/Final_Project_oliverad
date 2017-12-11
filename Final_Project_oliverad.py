@@ -43,7 +43,8 @@ def main():
     butterfly = Butterfly()
     flowers = int(input("How many flowers dou you want? Suggested: 1-4"))
     while flowers == 0 or flowers > 4:
-        print ("CANNOT DRAW {0} FLOWERS".format(flowers))
+        msg = "CANNOT DRAW {0} FLOWERS".format(flowers)
+        print(msg)
         flowers = int(input("How many flowers dou you want? Suggested: 1-4"))
 
     else:
