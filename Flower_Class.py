@@ -29,14 +29,14 @@ class Flower:
         Asks user for the size of internal shape in each petal
         :return: None
         """
-        self.size = int(input("Enter petal size: [2-10]"))
+        self.size = int(input("Enter petal size: [2-10] \n"))
 
     def user_set_shape_petals(self):
         """
         Asks user for number of sides in each petal
         :return: None
         """
-        self.petal_sides = int(input("Enter number of sides in each petal: [3/5]"))
+        self.petal_sides = int(input("Enter number of sides in each petal: [3/5] \n"))
 
     def angle_calculator(self):
         """
@@ -86,12 +86,12 @@ class Flower:
         self.turtle.pendown()
 
         for i in range(3):     # draw large part of steam
-            self.turtle.forward(47)
+            self.turtle.forward(50)
             self.turtle.right(-20)
         # draw small part of steam
         for i in range(2):
             self.turtle.right(20)
-            self.turtle.forward(-47)
+            self.turtle.forward(-50)
         self.turtle.right(135)
         self.turtle.forward(20)
         # stamp a little leaf
